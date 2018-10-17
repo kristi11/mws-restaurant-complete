@@ -10,7 +10,7 @@ Further improvements have been made to get it ready for stage 3 including adding
 
 After installing and lifting the server provided by Udacity https://github.com/udacity/mws-restaurant-stage-3 follow the steps below.
 
-If you prefer to not install the server on your own you can use the one included on this project.To do that in a terminal `cd` into `mws-restaurant-stage-3` and run `npm install` to install the node dependencies and then run `node server` to lift the server.When creating your own project include the `mws-restaurant-stage-3` folder in a separate folder from your code. That folder is there just to act as a real world server to give your a better understanding how you would work on a real world project. It should not be touched or changed. The only reason it is included within this project is that it is easier to install for whoever wants to download the server code along with this project and not seperately.Do not let it confuse you because it sure confused me.Happy coding :)
+If you prefer to not install the server on your own you can use the one included on this project.To do that in a terminal `cd` into `mws-restaurant-stage-3` and run `npm install` to install the node dependencies and then run `node server` to lift the server.When creating your own project include the `mws-restaurant-stage-3` folder in a separate folder from your code. That folder is there just to act as a real world server to give your a better understanding how you would work on a real world project. It should not be touched or changed. The only reason it is included within this project is that it is easier to install for whoever wants to download the server code along with this project and not seperately.Do not let it confuse you because it sure confused me.
 
 Then,
 
@@ -18,6 +18,8 @@ In a terminal `cd` into `mws-restaurant-complete` and run `npm install` to insta
 This folder contains all the code that's being worked on.
 
 Now go to http://localhost:8000 to see the project.
+
+Happy coding :)
 
 ## Author
 <a href="https://github.com/kristi11">Kristi Tanellari</a>
