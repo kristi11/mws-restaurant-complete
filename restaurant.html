@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- add meta charset and meta viewport tags -->
+  <!-- Change css referenced files from css/ to min-css/ -->
+  <!-- Add theme color tag
+  Add link to manifest.json file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Normalize.css for better cross-browser consistency -->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="css-min/styles.css" type="text/css">
+  <meta name="theme-color" content="#fff"/>
+  <link rel="manifest" href="manifest.json">
+  <title>Restaurant Info</title>
+</head>
+
+<body class="inside">
+  <!-- Beginning header -->
+  <header>
+    <!-- Beginning nav -->
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <ul id="breadcrumb" >
+      <li><a href="/">Home</a></li>
+    </ul>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+  </header>
+  <!-- End header -->
+
+  <!-- Beginning main -->
+  <main id="maincontent">
+    <!-- Beginning map -->
+    <section id="map-container">
+      <div id="map" aria-label="Map of the restaurant"></div>
+    </section>
+    <!-- End map -->
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container">
+      <h1 id="restaurant-name"></h1>
+      <!-- Wrap restaurant content in div and give it a class -->
+      <div class="restaurant-details" id="r_details">
+      <!--
+        * Add picture tag
+        * Add source tags for medium and small images
+      -->
+        <picture>
+          <source id="small-img">
+          <source id="medium-img">
+          <img id="restaurant-img">
+        </picture>
+        <p id="restaurant-cuisine"></p>
+      <!--   <div id="fav_div" onclick="DBHelper.setFavorite(is_favorite)">
+<img src="icons/fav_full.svg">
+        </div> -->
+        <p id="restaurant-address"></p>
+        <!-- Wrap table in a div -->
+        <div class="table-container">
+          <table id="restaurant-hours"></table>
+        </div>
+      </div>
+    </section>
+    <!-- end restaurant -->
+    <!-- Beginning reviews -->
+    <section id="reviews-container">
+      <ul id="reviews-list">
+        <li>
+          <form method="POST" id="reviews-form"
+          onsubmit="return DBHelper.saveReview();">
+             <label for="review" class="review_label">Leave a review</label>
+             <input name="name" id="review_name" class="name_content" placeholder="Your name" aria-label="insert your name">
+              <textarea name="review" id="review_comments" class="review_content" rows="5" placeholder="Write review" aria-label="write your review"></textarea>
+              <select name="review_rating" id="review_rating" class="review_rating" aria-label="select rating">
+              <option value="" disabled selected>Choose rating &#x25BE;</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <button type="submit" class="review_button">Send</button>
+          </form>
+      </li>
+      </ul>
+      <!--  <section id="review-form-section">
+      <div id="review-form"></div>
+    </section> -->
+    </section>
+    <!-- End reviews -->
+  </main>
+  <!-- End main -->
+
+  <!-- Beginning footer -->
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+  <!-- End footer -->
+
+  <!-- Beginning scripts -->
+  <!-- Change js referenced files from js/ to min-js/ -->
+  <!-- Database helpers -->
+  <script src="js-min/idb.js"></script>
+  <script type="text/javascript" src="js-min/dbhelper.js"></script>
+  <!-- Main javascript file -->
+  <script type="text/javascript" src="js-min/restaurant_info.js"></script>
+  <!-- lazysizes package for lazy loading images -->
+  <script src="js-min/lazysizes.min.js" async=""></script>
+  <!-- Google Maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_H6fahKTg-6ikSnhPFdVL2nJT0AjqcBs&libraries=places&callback=initMap"></script>
+  <!-- End scripts -->
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+  <!--
+    Add meta charset and meta viewport tags
+    Add theme color tag
+    Add link to manifest.json file
+    Change css referenced files from css/ to min-css/
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="css-min/styles.css">
+  <meta name="theme-color" content="#fff"/>
+  <link rel="manifest" href="manifest.json">
+  <title>Restaurant Reviews</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <section id="map-container">
+      <img id="static_map" class="static_map" onclick="toggle_maps()" src="https://maps.googleapis.com/maps/api/staticmap?center=40.722216,-73.987501&zoom=11&size=800x600&f&markers=color:red|40.713829,-73.989667&markers=color:red|40.683555,-73.966393&markers=color:red|40.747143,-73.985414&markers=color:red|40.722216,-73.987501&markers=color:red|40.705089,-73.933585&markers=color:red|40.674925,-74.016162&markers=color:red|40.727397,-73.983645&markers=color:red|40.726584,-74.002082&markers=color:red|40.743797,-73.950652&markers=color:red|40.743394,-73.954235&key=AIzaSyD_H6fahKTg-6ikSnhPFdVL2nJT0AjqcBs" alt="the static map of restaurants">
+    <div id="map" aria-label="Map with restaurants" class="hidden_map"></div>
+    </section>
+    <section>
+      <div class="filter-options">
+        <h2>Filter Results</h2>
+          <select id="neighborhoods-select" name="neighborhoods" aria-label = "select-neighborhood" onchange="updateRestaurants()">
+            <option value="all">All Neighborhoods</option>
+          </select>
+        <select id="cuisines-select" name="cuisines" aria-label = "select-cuisine" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+      <ul id="restaurants-list"></ul>
+    </section>
+  </main>
+  <!-- Change js referenced files from js/ to min-js/ -->
+  <!-- Jake Archibald's package to use IndexedDb with promises -->
+  <script src="js-min/idb.js"></script>
+ <!-- Database helpers -->
+  <script type="application/javascript" charset="utf-8" src="js-min/dbhelper.js"></script>
+   <!-- Main javascript file -->
+  <script type="application/javascript" charset="utf-8" src="js-min/main.js"></script>
+  <!-- lazysizes package for lazy loading images -->
+  <script src="js-min/lazysizes.min.js" async=""></script>
+   <!-- Google Maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_H6fahKTg-6ikSnhPFdVL2nJT0AjqcBs&libraries=places&callback=initMap"></script>
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>
